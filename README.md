@@ -1,4 +1,4 @@
 # Python_Workshop
-Intro to Python + Reverse Shell
-
-# WIP
+## CURRENTLY WORK IN PROGRESS
+## SLIDES HOSTED ON GITHUB PAGES
+## https://kevintxy.github.io/Python_Workshop/
