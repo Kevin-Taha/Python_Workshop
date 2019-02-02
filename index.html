@@ -48,14 +48,14 @@
 					<h3 style="font-size: 1.2em"> Requirements </h3>
 					<h6 style="text-decoration: underline"> 1. Python 3 </h6>
 					<ul style="width: 100%; font-size: .8em">
-						<li style="width: 100%"> Option 1: Install from python.org (required for part 2) </li>
-						<li> Option 2: Use repl.it (online IDE) </li> 
+						<li style="width: 100%"> Option 1 (Recommended): Install from python.org or SSH to lab machine such as data.cs or maven.itap </li>
+						<li> Option 2: Use repl.it (online IDE, will NOT work for part 2) </li> 
 						<p style="color: red; font-size: .7em" > WINDOWS USERS: Please check the "Add Python3.7 to PATH" button. 
 						<br> If you prefer using the Linux Subsystem for Windows, open BASH and run "sudo apt install python3" instead </p>
 					</ul>
-					<h6 style="text-decoration: underline"> 2. Text Editor </h6>
+					<h6 style="text-decoration: underline"> 2. Any Text Editor </h6>
 					<ul style="width: 100%; font-size: .8em">
-						<li style="width: 100%"> VS Code > Vim > All other Editors :) </li> 
+						<li style="width: 100%"> I'll be using VIM on Bash for Windows, VS Code is also amazing. </li> 
 					</ul> 
 					<h6 style="text-decoration: underline"> 3. Network Listener (For Part 2) - We will handle this later </h6>
 					<ul style="width: 100%; font-size: .8em">
@@ -148,7 +148,7 @@
 				</section>
 					<section>
 
-						<h3> Python3 - Easy as Py </h3>
+						<h3> Part 1 - Intro to Python3 </h3>
 						<h5> Let's Get Started! </h5>
 						<ol> 
 							<li> Get an active text editor and terminal running! </li>
@@ -223,10 +223,33 @@ print(x + str(y))
 
 				</section>
 			</section>
+		<section>
 			<section>
 				<h3> Lists & String Methods </h3>
-				<li> Python arrays are called "Lists" and are dynamically sized </li>
+				<h6>Python has 4 major collection-based data types</h6> 
+				<ul> 
+					<li> <span style="font-weight: bolder">  Lists - </span> Dynamically sized arrays</li> 
+					<li><span style="font-weight: bolder">  Tuples - </span> Ordered & unchangable lists</li>
+					<li> <span style="font-weight: bolder"> Sets - </span>Unordered, Unindexed, no duplicates - Similar to mathematical sets </li>
+					<li> <span style="font-weight: bolder"> Dictionaries - </span> Very powerful "Hash Table" style structure </li> 
+				</ul> 
 			</section>
+			<section>
+					<h5> Working with lists (Example + Live Demo) </h5>
+					<pre style= "width: 100%"><code class="hljs" data-trim contenteditable>
+
+# Lists have no data type requirements.
+myList = ["apple", 1, 2, "banana"]
+
+# Easy to change elements
+myList[1] = 7
+
+# Also easy to append, delete, extend, etc with list functions!
+myList.append("")									
+					</code></pre>
+			</section> 
+		</section>
+
 
 
 <!-- END OF SLIDES -->
