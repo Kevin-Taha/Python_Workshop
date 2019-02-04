@@ -79,7 +79,7 @@
 				<section>
 						<section>
 							<h5> Other Notes and Warnings </h5>
-							<p style="color: #a43; font-weight: bold"> All information in this workshop is for educational purposes. If you have any issues please contact me! All workshop material is open source. </p>
+							<p style="color: #a43; font-weight: bold"> All information in this workshop is for educational purposes. If you have any issues please contact me! All workshop material is open source. Images used are courtesy of RealPython. </p>
 							<br>
 							<a href="#" class="navigate-down">
 								<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
@@ -121,8 +121,12 @@
 					</section>
 				<section> 
 					<section> 
-							<h3> Why know Python? </h3>
-							<li> It's easy to write and reads like english!</li>
+							<h3> Part 1) Intro to Python </h3>
+							<img height="400px" src="img/python.jpg" />
+					</section>
+					<section>
+					<h3> Why Know Python? </h3> 
+					<li> It's popular, easy to write, and reads like english!</li>
 							<h6> <span style="text-decoration: underline"> Example: Ternary Operators: C vs Python </span> </h6>
 							<h6> In C: </h6>
 							<blockquote style="width: 100%; font-size: 30px; background-color: #222222; color:green"> <code> 
@@ -135,8 +139,8 @@
 								a = 2 </br>
 								print("A IS ONE") if a is 1 else "A IS NOT ONE" </br> 
 								# Output: "A IS NOT ONE"
-							</code> </blockquote>  		
-					</section>
+							</code> </blockquote>  	
+						</section>
 		
 					<section>
 						<h3>Why know Python?</h3>
@@ -304,13 +308,17 @@ a[-3]   #Outputs: 'U'
 		<section> 
 			<section> 
 				<h3> Control Flow </h3>
-				<p> Python has many control flow statements, these are the most notable: </p>
-				<li> If/elif/else statements,  </li>
-				<li> For Loops and For-Each loops </li>
-				<li> While Loops </li>
-				<li> Break and continue statements </li>
-				<li> The "pass" statement </li>
-				<li> Functions </li> 
+				<img src="img/loops.jpg" style="height:400px;" /> 
+			</section>
+			<section>
+				<h3> Control Flow</h3> 
+					<p> Python has many control flow statements, these are the most notable: </p>
+					<li> If/elif/else statements,  </li>
+					<li> For Loops and For-Each loops </li>
+					<li> While Loops </li>
+					<li> Break and continue statements </li>
+					<li> The "pass" statement </li>
+					<li> Functions </li> 
 			</section>
 
 			<section> 
@@ -398,7 +406,69 @@ for x in range(2,30,10):
 			</section>
 		</section>
 
-		
+		<section> 
+			<section> 
+				<h3> Functions and Classes </h3>
+				<p> Python is an Object-Oriented language that can behave like a dynamic/functional language </p>
+				<img height="400px" src="img/oop.jpg"/> 
+			</section>
+			<section> 
+				<h4> Functions </h4>
+				<li style="font-size: 30px"> Use the "def" keyword to write functions </li>
+				<pre style= "width: 100%; overflow-y: hidden; line-height: 1.1em" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
+def do_stuff():
+	print("Beep Boop did you call me?")
+			
+# Functions with parameters
+def say_hello(name):
+	print("Hello", name)
+					
+# You can also set default parameter values
+def say_hello(name = "John")
+	print("Hello", name)   
+# Prints "Hello John" if called w/out parameter
+					
+# Use the "return" keyword for return values
+def add(x, y)
+	return x + y
+
+				</code></pre> 
+			</section>
+			<section> 
+				<h4> Classes </h4>
+				<p style="font-size: 30px"> Python OOP could justify its own workshop, but here are the basics: </p>
+				<pre style= "width: 100%; overflow-y: hidden; line-height: 1.1em" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
+# Declaring Classes
+class Pet:
+
+# Initializer - uses one of Python's "Magic Methods"
+	def __init__(self, name, age): 
+		self.name = name
+		self.age = age
+		mood = "Happy"
+
+class Dog(Pet):  # Subclass Inherits from Parent (Pet)
+	def bark(self)
+		print("Woof, says " + self.name)
+
+myDog = Dog("Teddy", 2)
+myDog.bark()  # Outputs: "Woof, says Teddy"
+				</code></pre> 
+			</section>
+			<section> 
+				<h4> Imports </h4>
+				<p> The "import" is used for libraries and it is very versatile. </p>
+				<pre style= "width: 100%; overflow-y: hidden;" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
+
+
+
+				</code></pre> 
+			</section>
+
+
+
+
+		</section>
 
 
 
