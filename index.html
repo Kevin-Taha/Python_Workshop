@@ -458,17 +458,33 @@ myDog.bark()  # Outputs: "Woof, says Teddy"
 			<section> 
 				<h4> Imports </h4>
 				<p> The "import" is used for libraries and it is very versatile. </p>
-				<pre style= "width: 100%; overflow-y: hidden;" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
+				<pre style= "width: 100%; overflow-y: hidden; line-height: 1.1em;" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
+# Importing and using entire Library
+import random
+x = random.randint(1,10)
 
+# You can rename an imported library using the "as" keyword
+import random as ra
+x = ra.randint(1,10)
 
+# You can also choose to just import certain functions from the library
+from random import randint, random, shuffle
+x = [randint(1,10) for i in range(10)]
+shuffle(x)   # No need to reference the class!
 
+# Sneak peak of "list comprehensions" shown above. 
+# Generated list of 10 random numbers 1-10 in just one line!
 				</code></pre> 
 			</section>
-
-
-
-
 		</section>
+		<section>
+			<section>
+				<h3> References and further learning </h3> 
+				<img src="img/references.jpg" style="height:400px;"/>
+			</section> 
+			
+		</section>
+		
 
 
 
