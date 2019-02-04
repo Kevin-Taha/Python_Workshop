@@ -189,7 +189,7 @@
 				<section>
 					<h3> Variable Usage - Declaring </h3>
 					<li> Python is dynamically-typed - no declarations needed! </li> 
-					<pre style= "width: 100%"><code class="hljs" data-trim contenteditable>
+					<pre style= "width: 100%; overflow-y: hidden;"  ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
 # Use hashes to write comments
 x = "Python"
 y = 3
@@ -205,7 +205,7 @@ print(type(x))
 				<section>
 					<h3> Variable Usage - Printing </h3> 
 					<li> Watch out for data type errors - cast using str(), int(), float(), and other functions </li>
-					<pre style= "width: 100%"><code class="hljs" data-trim contenteditable>
+					<pre style= "width: 100%; overflow-y: hidden;" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
 
 x = "Python"
 y = 3
@@ -236,8 +236,7 @@ print(x + str(y))
 			</section>
 			<section>
 					<h5> Working with lists (Example + Live Demo) </h5>
-					<pre style= "width: 100%"><code class="hljs" data-trim contenteditable>
-
+					<pre style= "width: 100%; overflow-y: hidden;" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
 # Lists have no data type requirements.
 myList = ["apple", 1, 2, "banana"]
 
@@ -256,16 +255,153 @@ myList.pop(0)  # Removes item @ first index & returns it
 			</section> 
 
 			<section>
-					<h5> Splicing </h5>
-					<pre style= "width: 100%"><code class="hljs" data-trim contenteditable>
+					<h5> Strings Intro & Demo </h5>
+				<li style="width: 100%; font-size: 30px"> Strings function like lists, but are immutable (unchangable) </li>
+				<li style="width: 100%; font-size: 30px"> The built-in str library also has a LOT of very useful functions </li>
 
-# Lists have no data type requirements.
 
+
+					<pre style= "width: 100%; overflow-y: hidden;" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
+longString = """ Use triple quotes in order to allow your strings
+to span multiple lines without getting indentation errors """
+
+# Split string up into words using space as separator
+wordList = longString.split(' ')
+
+# You can also do the reverse with str.join()
+newString = ' '.join(wordList)
+
+# You can search within strings as if they were lists
+print('triple' in longString) # Outputs True
+
+# Other useful functions: len(), str.strip(), .lower(), .upper(), 
+.replace(), .capitalize(), .index(), .isalpha(),...
 					</code></pre>
 			</section> 
 
 
+			<section>
+					<h5> List & String Splicing </h5>
+					<li> Lists and Strings can be spliced with the format stuff[first:last:skip]</li>
+					<pre style= "width: 100%; overflow-y: hidden;" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
+a = "Boiler Up!"
+
+a[:4]   #Outputs: "Boil" 
+a[6:]   #Outputs: " Up!"
+a[3:8]  #Outputs: "ler U"
+a[:3] + a[6:] Outputs: "Boi Up!"
+
+a[::2]  #Outputs: "Bie p"
+a[::-1] #Outputs: "!pU relioB", effectively reversing the string!
+
+# Note: Python supports negative indices for lists!
+a[-3]   #Outputs: 'U'
+
+					</code></pre>
+			</section> 
 		</section>
+
+		<section> 
+			<section> 
+				<h3> Control Flow </h3>
+				<p> Python has many control flow statements, these are the most notable: </p>
+				<li> If/elif/else statements,  </li>
+				<li> For Loops and For-Each loops </li>
+				<li> While Loops </li>
+				<li> Break and continue statements </li>
+				<li> The "pass" statement </li>
+				<li> Functions </li> 
+			</section>
+
+			<section> 
+				<h4> If statements </h4>
+				<p style="font-size: 25px"> Self explanatory, works like every other language. INDENT! </p>
+				<pre  style= "width: 100%; overflow-y: hidden;" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
+# Declaring 2 vars at once using Python's unpacking features
+purdue, iu = 9, 4
+
+if purdue > iu:
+	print(" IU Sucks! ")
+elif purdue == iu:
+	iu = purdue - 1000
+else:
+	del iu 
+# del is a keyword for deleting objects (usually not used)
+
+# Python has the logical operators "and", "or", and "not"
+if 9 + 10 != 21 and not iu > Purdue:
+	print("All is right in the world")
+					
+				</code></pre>
+			</section>
+			<section>
+				<h4> Shorthand If and Ternaries </h4>
+
+			<pre style= "width: 100%; overflow-y: hidden;" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
+# Single statements can go on one line
+if a > b: print("A is bigger")
+
+# If/Else can also go on one line using ternary syntax
+print(" IU Sucks! ") if purdue > iu else print(" iu sucks?")
+			</code></pre>
+			</section> 
+			<section>
+				<h4> While Loops </h4>
+				<li> While loops are self explanatory and work like other languages </li>
+				<pre style= "width: 100%; overflow-y: hidden;" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
+# Remember to Indent!
+i = 10
+while i > 0:
+	print(i)
+	i -= 1
+
+# Note: "break" and "continue" statements are supported!
+				</code></pre>
+			</section>
+			<section> 
+				<h4> For Loops</h4>
+				<ul> 
+				<li> Python For loops are untraditional </li>
+				<li> For loops require some kind of "iterable" object or "sequence" to go through 
+				<ul> <li> This could be lists, strings, or many other types of data structures</li></ul>
+				</li>
+				</ul>
+				<pre style= "width: 100%; overflow-y: hidden;" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
+# "Traditional" style for loops
+for i in range(3):
+	print(i)
+
+#Output: 0 
+	 1
+	 2
+
+# The range(first, last, skip) function is commonly used for loops
+
+				</code></pre>
+			</section>
+			<section> 
+				<h4> More for loop examples </h4>
+				<pre style= "width: 100%; overflow-y: hidden;" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
+schools = ["Purdue", "IU", "UIUC", "Michigan"]
+for x in mylist:
+	print(x)
+
+# Loop through Letters in a String
+for i in "some random string":
+	print(i)
+
+# Use range function to specify exact looping parameters
+for x in range(2,30,10):
+	print(x)     #Output: 2, 12, 22
+
+				</code></pre>
+			</section>
+		</section>
+
+		
+
+
+
 
 
 
